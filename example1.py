@@ -28,4 +28,6 @@ result = client.decisions.create(
     },
 )
 
-print("mentions_launch:", result.answers["mentions_launch"].noul, "delivery:", result.answers["delivery"].score)
+print("Full result:", result.to_json())
+print("------------------------------")
+print("Mentions launch score:", result.answers["mentions_launch"].noul, "Delivery score:", result.answers["delivery"].score)

@@ -13,6 +13,7 @@ result = client.decisions.create(
     },
 )
 
-print(result)
+print("Full result:", result.to_json())
+print("------------------------------")
 answer = result.answers["is_damaged"]
-print(f"P(yes)={answer.noul:.2f} confidence={answer.confidence:.2f}")
+print("Is damaged score:", f"P(yes)={answer.noul:.2f} confidence={answer.confidence:.2f}")

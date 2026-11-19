@@ -46,11 +46,6 @@ if a["is_defect"].noul > 0.9 and a["next_action"].confidence > 0.6:
 else:
     action = "human_escalation"
 
-print(action, a["churn_risk"].score)
-print(result.model_dump_json(indent=4)) 
-
-answer = result.answers["department"]
-if answer.confidence >= 0.7:
-    route_to(answer.choice)
-else:
-    route_to("human_review")
+print("Action:", action, "Churn risk score:", a["churn_risk"].score)
+print("------------------------------")
+print("Full result:", result.model_dump_json(indent=4)) 

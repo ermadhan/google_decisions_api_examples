@@ -35,6 +35,6 @@ result = client.decisions.create(
 
 po = result.answers["ticket_QR_Code"]
 category = result.answers["travel_itinerary"]
-print(po.noul, category.choice, category.confidence)
+print("Ticket QR Code:", po.noul, "Travel itinerary category:", category.choice, "Confidence:", category.confidence)
 print("-----------------------------------")
-print(result.model_dump_json(indent=4))
+print("Full result:", result.model_dump_json(indent=4))

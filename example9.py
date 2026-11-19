@@ -35,7 +35,7 @@ result = client.decisions.create(
     },
 )
 
-print(result.answers["gender"].noul)
-print(result.answers["gender_identified"].choice)
+print("gender:", result.answers["gender"].noul)
+print("gender identified:", result.answers["gender_identified"].choice)
 print("-----------------------------------")
-print(result.model_dump_json(indent=4))
+print("Full result:", result.model_dump_json(indent=4))

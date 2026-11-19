@@ -17,5 +17,6 @@ result = client.decisions.create(
     },
 )
 
-print(result.to_json())
-print(result.answers["is_defect"].noul)
+print("Full result:", result.to_json())
+print("------------------------------")
+print("Is defect score:", result.answers["is_defect"].noul)

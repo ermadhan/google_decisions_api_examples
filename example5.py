@@ -19,8 +19,9 @@ result = client.decisions.create(
 )
 
 answer = result.answers["severity"]
-print(answer.score, answer.confidence, answer.probabilities)
-print(result.model_dump_json(indent=4))
-
+print("Answer score, confidence, probabilities:", answer.score, answer.confidence, answer.probabilities)
+print("------------------------------")
+print("Full result:", result.model_dump_json(indent=4))
+print("------------------------------")
 level = max(answer.probabilities, key=answer.probabilities.get)  # "1"
-print(answer.legend[level])  # "Workaround available: ..."
+print("Answer legend for level", level, ":", answer.legend[level])  # "Workaround available: ..."

@@ -40,7 +40,7 @@ result = client.decisions.create(
     },
 )
 
-print(result.model_dump_json(indent=4))
+print("Full result:", result.model_dump_json(indent=4))
 print("-----------------------------------")
 a = result.answers
 if a["is_defect"].noul > 0.9 and a["next_action"].confidence > 0.6:
@@ -48,4 +48,4 @@ if a["is_defect"].noul > 0.9 and a["next_action"].confidence > 0.6:
 else:
     action = "human_escalation"
 
-print(action, a["churn_risk"].score)
+print("Action:", action, "Churn risk score:", a["churn_risk"].score)

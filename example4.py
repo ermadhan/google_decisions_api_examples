@@ -19,6 +19,7 @@ result = client.decisions.create(
     },
 )
 
-print(result.model_dump_json(indent=4))
+print("Full result:", result.model_dump_json(indent=4))
+print("------------------------------")
 answer = result.answers["department"]
-print(answer.choice, answer.confidence, answer.probabilities)
+print("Department choice:", answer.choice, "Confidence:", answer.confidence, "Probabilities:", answer.probabilities)
